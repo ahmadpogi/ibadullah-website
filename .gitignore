@@ -1,0 +1,6 @@
+.venv/
+node_modules/
+.env
+data/
+*-preview.png
+IBADULLAH WEBSITE.pdf

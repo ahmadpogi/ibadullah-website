@@ -1,0 +1,16 @@
+{
+  "name": "ibadullah-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "web": "node server.mjs",
+    "check": "node --check dist/app.js && node --check dist/live-donation.js && node --check dist/donation-status.js && node --check dist/admin.js && node --check server.mjs && node --check lib/donations.mjs",
+    "test": "node --test",
+    "admin:hash": "node scripts/hash-password.mjs"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.10.0",
+    "dotenv": "^18.0.9"
+  }
+}
