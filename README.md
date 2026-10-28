@@ -1,6 +1,6 @@
 # Ibadullah website
 
-Responsive English/Arabic website for four giving areas: building masajid, supporting existing masajid, orphan support, and clean water. Project imagery is illustrative.
+Responsive English/Arabic website for three planned focus areas: building masajid, supporting existing masajid, and orphan care. The About page describes other programs under consideration and displays the SEC certificate of incorporation. Project imagery is illustrative.
 
 ## Cloudflare Worker
 
@@ -12,7 +12,7 @@ Requires Node.js 22. Run `npm install`, then `npm run web` and open `http://127.
 
 ## PayMongo integration
 
-The server has a PHP hosted-checkout integration prepared for a future launch. The public donation form is intentionally unavailable. When re-enabled after review, donors will choose one of the four projects, enter a one-time amount and contact details, and leave the site for PayMongo's checkout. The server creates a unique local donation reference and a PayMongo checkout session. A return to the site shows a pending status until a signed `checkout_session.payment.paid` webhook matches the reference, session, project, amount, currency, and payment. Duplicate events cannot add a second donation.
+The server has a PHP hosted-checkout integration prepared for a future launch. The public donation form is intentionally unavailable. When re-enabled after review, donors will choose one of the three focus areas, enter a one-time amount and contact details, and leave the site for PayMongo's checkout. The server creates a unique local donation reference and a PayMongo checkout session. A return to the site shows a pending status until a signed `checkout_session.payment.paid` webhook matches the reference, session, project, amount, currency, and payment. Duplicate events cannot add a second donation.
 
 Copy `.env.example` to `.env` and fill the settings. Keep `.env` and the SQLite database private; both are gitignored. The API secret key and webhook signing secret must never be used in browser code. Create a PayMongo webhook for `https://YOUR-DOMAIN/api/paymongo/webhook` and subscribe to `checkout_session.payment.paid`. Test with PayMongo test keys and a publicly reachable HTTPS test domain first. The hosted checkout charges PHP; eligible international cards may be accepted by PayMongo, but USD/SAR charging and recurring donations are not implemented.
 
@@ -35,7 +35,7 @@ The staff dashboard is read-only. Expenditure approvals, role separation, MFA, r
 
 ## Information required before launch
 
-- Official logo, organizational legal name, SEC registration details, public office address, and reviewed Arabic copy. The Contact page now lists ibadullah.org@yahoo.com.
+- Review of the proposed logo, public office address, and reviewed Arabic copy. The About page displays the supplied SEC certificate and registered name; the Contact page lists ibadullah.org@yahoo.com.
 - Approved project locations, descriptions, budgets, beneficiaries, milestones, authorized contacts, and reporting process.
 - Approved privacy notice, donation/refund terms, and any fundraising permissions that apply.
 - A production host with persistent storage, HTTPS, database backups, monitoring, and restricted staff access.

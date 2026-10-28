@@ -4,7 +4,7 @@ const translations = {
     name:'Your full name', email:'Email for your receipt', anonymous:'Keep my name private in public reports',
     consent:'I have read the privacy and donation policies.', submit:'Continue to secure checkout',
     unavailable:'Checkout could not start. Please try again later.', processing:'Opening secure checkout…',
-    aside:'Your payment will be completed on PayMongo’s hosted checkout. A gift is confirmed only after its payment status is verified.',
+    aside:'Your payment will be completed on PayMongo’s hosted checkout. A donation is confirmed only after its payment status is verified.',
     currency:'One-time donation · PHP', privacy:'Privacy', donations:'Donations'
   },
   ar: {
@@ -41,7 +41,6 @@ async function mount() {
   document.querySelector('#project').addEventListener('change', () => window.dispatchEvent(new Event('ibadullah:donation-project-ready')));
   window.dispatchEvent(new Event('ibadullah:donation-project-ready'));
   document.querySelector('.donation-aside p').textContent = c.aside;
-  document.querySelector('.preview-bar').textContent = language === 'ar' ? 'تبرعات آمنة للمشاريع المعتمدة' : 'Secure giving to approved projects';
   document.querySelector('.footer-bottom span:last-child').textContent = language === 'ar' ? 'تُؤكد التبرعات بعد التحقق من الدفع.' : 'Donations are confirmed after payment verification.';
   const form = document.querySelector('#live-donation');
   form.addEventListener('submit', async event => {

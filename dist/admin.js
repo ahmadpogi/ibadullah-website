@@ -15,7 +15,7 @@ try {
     const name = document.createElement('h2'), value = document.createElement('strong'), count = document.createElement('p');
     name.textContent = project.project_id.replaceAll('-', ' ');
     value.textContent = money(project.gross_minor);
-    count.textContent = `${project.gifts} verified gifts · Net ${money(project.net_minor)}`;
+    count.textContent = `${project.donations} verified donations · Net ${money(project.net_minor)}`;
     card.append(name, value, count); summary.append(card);
   }
   if (!data.summary.length) summary.textContent = 'No donations recorded yet.';

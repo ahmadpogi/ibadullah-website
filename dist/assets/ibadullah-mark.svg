@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Ibadullah community mark</title>
+  <rect width="64" height="64" rx="14" fill="#153d31"/>
+  <path d="M11 51V29C11 19 19 12 32 6c13 6 21 13 21 23v22" fill="none" stroke="#cdb276" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="22" cy="31" r="3.2" fill="#f8f6ef"/>
+  <circle cx="32" cy="27" r="3.5" fill="#f8f6ef"/>
+  <circle cx="42" cy="31" r="3.2" fill="#f8f6ef"/>
+  <path d="M15.5 48v-5.5a6.5 6.5 0 0 1 13 0V48m-2-1v-6a5.5 5.5 0 0 1 11 0v6m-2-4.5a6.5 6.5 0 0 1 13 0V48" fill="none" stroke="#f8f6ef" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M11 52h42" stroke="#cdb276" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
