@@ -107,8 +107,9 @@ const copy = {
     aboutLead: 'Ibadullah is a Philippine SEC-registered nonprofit planning a charitable platform around four focused projects: new masajid, existing masajid, orphan support, and clean water for families.',
     aboutBody: 'The mission includes both physical infrastructure and the people who rely on it. Each program is intended to have a defined purpose, accountable stewardship, and reporting appropriate to the people it serves.',
     aboutDetailTitle: 'Organization details', aboutDetailText: 'Registration details, leadership contacts, official address, and approved project documents will be added after review.',
-    donateEyebrow: 'Donation journey preview', donateTitle: 'Choose a cause with confidence.',
-    donateLead: 'This is a preview of how project-specific giving will work. No payment can be made here, and no donor details are collected.',
+    donateEyebrow: 'Giving', donateTitle: 'Online giving',
+    donateLead: 'Online donations are being prepared. This page does not accept payments or collect donor details.',
+    comingSoon: 'Feature coming soon', comingSoonText: 'We are preparing a secure way to support the project you selected.', selectedProject: 'You came here for',
     chooseProject: 'Project', chooseAmount: 'Amount', currency: 'Currency', frequency: 'Frequency', once: 'One-time', monthly: 'Monthly (planned)',
     chooseRoute: 'Payment route', localRoute: 'Philippine checkout (planned)', globalRoute: 'International giving (planned)',
     localMethods: 'GCash · QR Ph · cards', globalMethods: 'International cards · provider under review',
@@ -154,8 +155,9 @@ const copy = {
     aboutLead: 'عباد الله منظمة غير ربحية مسجلة لدى هيئة الأوراق المالية والبورصات الفلبينية، وتخطط لمنصة خيرية تركز على أربعة مشاريع: بناء المساجد، ودعم المساجد القائمة، ورعاية الأيتام، وتوفير المياه النظيفة للأسر.',
     aboutBody: 'تشمل الرسالة المرافق والأشخاص الذين يعتمدون عليها. ويهدف كل برنامج إلى غرض محدد وإدارة مسؤولة وتقارير مناسبة لمن يخدمهم.',
     aboutDetailTitle: 'بيانات المنظمة', aboutDetailText: 'ستضاف بيانات التسجيل وجهات الاتصال القيادية والعنوان الرسمي ووثائق المشاريع المعتمدة بعد المراجعة.',
-    donateEyebrow: 'معاينة مسار التبرع', donateTitle: 'اختر مجالاً بثقة.',
-    donateLead: 'هذه معاينة لطريقة التبرع المخصص لكل مشروع. لا يمكن الدفع هنا ولا تُجمع بيانات المتبرعين.',
+    donateEyebrow: 'العطاء', donateTitle: 'التبرع عبر الإنترنت',
+    donateLead: 'نعمل على تجهيز التبرعات عبر الإنترنت. لا تقبل هذه الصفحة المدفوعات ولا تجمع بيانات المتبرعين.',
+    comingSoon: 'الميزة قادمة قريباً', comingSoonText: 'نجهز طريقة آمنة لدعم المشروع الذي اخترته.', selectedProject: 'المشروع الذي اخترته',
     chooseProject: 'المشروع', chooseAmount: 'المبلغ', currency: 'العملة', frequency: 'التكرار', once: 'مرة واحدة', monthly: 'شهرياً (مخطط له)',
     chooseRoute: 'وسيلة الدفع', localRoute: 'الدفع في الفلبين (مخطط له)', globalRoute: 'التبرع الدولي (مخطط له)',
     localMethods: 'جي كاش · QR Ph · بطاقات', globalMethods: 'بطاقات دولية · مزود الدفع قيد المراجعة',
@@ -168,7 +170,6 @@ const copy = {
 
 const page = document.body.dataset.page || 'home';
 let lang = localStorage.getItem('ibadullah-language') === 'ar' ? 'ar' : 'en';
-let paymentsActive = false;
 const app = document.getElementById('app');
 const t = () => copy[lang];
 const P = id => projectData.find(project => project.id === id);
@@ -243,26 +244,22 @@ function contact() {
 
 function donation() {
   const c=t();
-  const selected = new URLSearchParams(location.search).get('project');
-  const id = P(selected) ? selected : projectData[0].id;
-  return `<main>${simpleHero(c.donateEyebrow,c.donateTitle,c.donateLead)}<section class="section donation-section"><div class="container donation-layout"><div class="donation-card"><div class="donation-alert"><span class="alert-dot"></span>${c.notLive}</div><form id="donation-preview"><div class="form-field"><label for="project">${c.chooseProject}</label><select id="project" name="project">${projectData.map(item=>`<option value="${item.id}" ${item.id===id?'selected':''}>${item[lang].title}</option>`).join('')}</select></div><div class="form-field"><label for="amount">${c.chooseAmount}</label><div class="amount-control"><span id="amount-symbol">₱</span><input id="amount" name="amount" type="number" min="1" step="0.01" value="1000" inputmode="decimal" required></div><small>${c.amountHelp}</small></div><div class="form-two"><div class="form-field"><label for="currency">${c.currency}</label><select id="currency" name="currency"><option value="PHP">PHP</option><option value="USD">USD</option><option value="SAR">SAR</option></select></div><div class="form-field"><label for="frequency">${c.frequency}</label><select id="frequency" disabled><option>${c.once}</option><option>${c.monthly}</option></select></div></div><fieldset class="route-field"><legend>${c.chooseRoute}</legend><label class="route-option"><input type="radio" name="route" value="local" checked><div><strong>${c.localRoute}</strong><small>${c.localMethods}</small></div></label><label class="route-option"><input type="radio" name="route" value="global"><div><strong>${c.globalRoute}</strong><small>${c.globalMethods}</small></div></label></fieldset><button class="button button-dark button-full" type="submit">${c.review} ${arrow}</button></form><div id="sample-review" class="sample-review" hidden aria-live="polite"><span class="eyebrow">${c.sampleReview}</span><div class="review-row"><span>${c.confirmProject}</span><strong id="review-project"></strong></div><div class="review-row"><span>${c.chooseAmount}</span><strong id="review-amount"></strong></div><div class="review-row"><span>${c.chooseRoute}</span><strong id="review-route"></strong></div><div class="review-row"><span>${c.frequency}</span><strong>${c.once}</strong></div><p>${c.notLiveText}</p><button class="button button-dark button-full" id="edit-preview" type="button">${c.edit}</button></div></div><aside class="donation-aside"><span class="eyebrow">${c.notLive}</span><h2>${c.projectCtaTitle}</h2><p>${c.notLiveText}</p><a class="text-link" href="/#projects">${c.backProjects} ${arrow}</a></aside></div></section></main>`;
-}
-
-function syncDonationProject() {
-  const select=document.getElementById('project');
-  const aside=document.querySelector('.donation-aside');
-  const item=P(select?.value);
-  if(!aside||!item)return;
-  let visual=aside.querySelector('.donation-project-visual');
-  if(!visual){
-    visual=document.createElement('div');
-    visual.className='donation-project-visual';
-    visual.innerHTML='<img alt=""><span></span>';
-    aside.prepend(visual);
-  }
-  visual.querySelector('img').src=item.image;
-  visual.querySelector('span').textContent=t().imageNote;
-  aside.querySelector('h2').textContent=item[lang].title;
+  const selected=new URLSearchParams(location.search).get('project');
+  const item=P(selected)||projectData[0];
+  return `<main>${simpleHero(c.donateEyebrow,c.donateTitle,c.donateLead)}
+    <section class="section donation-section"><div class="container donation-layout">
+      <div class="donation-card coming-soon-card" role="status">
+        <div class="coming-soon-mark" aria-hidden="true">✦</div>
+        <span class="eyebrow">${c.donateEyebrow}</span>
+        <h2>${c.comingSoon}</h2>
+        <p>${c.comingSoonText}</p>
+        <div class="selected-project"><span>${c.selectedProject}</span><strong>${item[lang].title}</strong></div>
+      </div>
+      <aside class="donation-aside">
+        <div class="donation-project-visual"><img src="${item.image}" alt=""><span>${c.imageNote}</span></div>
+        <span class="eyebrow">${c.notLive}</span><h2>${item[lang].title}</h2><p>${c.notLiveText}</p>
+      </aside>
+    </div></section></main>`;
 }
 
 function render() {
@@ -272,62 +269,9 @@ function render() {
   document.title=`${pageName} — Ibadullah.org`;
   const content = page==='home'?home():P(page)?projectPage(P(page)):page==='sustainability'?sustainability():page==='transparency'?transparency():page==='about'?about():page==='contact'?contact():donation();
   app.innerHTML=header()+content+footer();
-  if(paymentsActive)document.querySelector('.footer-main > div:last-child span').outerHTML=`<a href="/privacy.html">${lang==='ar'?'الخصوصية':'Privacy'}</a><a href="/donation-policy.html">${lang==='ar'?'سياسة التبرع':'Donation policy'}</a>`;
   document.querySelector('.language-switch').addEventListener('click',()=>{lang=lang==='en'?'ar':'en';localStorage.setItem('ibadullah-language',lang);render();});
   const menu=document.querySelector('.menu-toggle');
   menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));document.querySelector('.primary-nav').classList.toggle('open',open);});
-  if(page==='donate') {
-    syncDonationProject();
-    document.getElementById('project').addEventListener('change',syncDonationProject);
-    const form=document.getElementById('donation-preview');
-    const review=document.getElementById('sample-review');
-    form.addEventListener('submit',event=>{
-      event.preventDefault();
-      const amount=Number(document.getElementById('amount').value);
-      if(!Number.isFinite(amount)||amount<=0){document.getElementById('amount').setCustomValidity(t().amountError);form.reportValidity();return;}
-      document.getElementById('amount').setCustomValidity('');
-      const picked=P(document.getElementById('project').value);
-      document.getElementById('review-project').textContent=picked[lang].title;
-      const currency=document.getElementById('currency').value;
-      document.getElementById('review-amount').textContent=new Intl.NumberFormat(lang==='ar'?'ar-PH':'en-PH',{style:'currency',currency}).format(amount);
-      document.getElementById('review-route').textContent=document.querySelector('input[name="route"]:checked').value==='global'?t().globalRoute:t().localRoute;
-      form.hidden=true;review.hidden=false;review.scrollIntoView({behavior:'smooth',block:'center'});
-    });
-    document.getElementById('edit-preview').addEventListener('click',()=>{review.hidden=true;form.hidden=false;document.getElementById('project').focus();});
-    document.getElementById('amount').addEventListener('input',event=>event.target.setCustomValidity(''));
-    document.getElementById('currency').addEventListener('change',event=>{
-      document.getElementById('amount-symbol').textContent={PHP:'₱',USD:'$',SAR:'﷼'}[event.target.value];
-      const localRoute=document.querySelector('input[name="route"][value="local"]');
-      localRoute.disabled=event.target.value!=='PHP';
-      if(localRoute.disabled)document.querySelector('input[name="route"][value="global"]').checked=true;
-    });
-  }
 }
 
 render();
-window.addEventListener('ibadullah:donation-project-ready',syncDonationProject);
-fetch('/api/config').then(response=>response.json()).then(config=>{
-  if(config.donationsEnabled!==true)return;
-  paymentsActive=true;
-  Object.assign(copy.en,{
-    preview:'Secure giving to approved projects',
-    footerNoPayment:'Donations are confirmed after payment verification.',
-    projectCtaText:'Give to this approved project through secure checkout.',
-    donateEyebrow:'Secure giving',
-    donateLead:'Choose a project and complete your gift through PayMongo’s hosted checkout. Payments are charged in Philippine pesos.',
-    notLive:'Secure checkout',
-    notLiveText:'Your payment is confirmed after our system receives a verified PayMongo notification.',
-    legal:'Privacy and donation policies'
-  });
-  Object.assign(copy.ar,{
-    preview:'تبرعات آمنة للمشاريع المعتمدة',
-    footerNoPayment:'تُؤكد التبرعات بعد التحقق من الدفع.',
-    projectCtaText:'ساهم في هذا المشروع المعتمد عبر صفحة دفع آمنة.',
-    donateEyebrow:'تبرع آمن',
-    donateLead:'اختر المشروع وأكمل تبرعك عبر صفحة PayMongo. تُخصم المبالغ بالبيزو الفلبيني.',
-    notLive:'دفع آمن',
-    notLiveText:'يُؤكد التبرع بعد أن نتلقى إشعار دفع موثقاً من PayMongo.',
-    legal:'سياسة الخصوصية والتبرع'
-  });
-  render();
-}).catch(()=>{});

@@ -4,11 +4,11 @@ Responsive English/Arabic website for four giving areas: building masajid, suppo
 
 ## Local preview
 
-Requires Node.js 22. Run `npm install`, then `npm run web` and open `http://127.0.0.1:3000`. The donation page shows a sample journey because checkout is disabled by default. Run `npm run check` and `npm test` to verify the application.
+Requires Node.js 22. Run `npm install`, then `npm run web` and open `http://127.0.0.1:3000`. The donation page currently shows a non-interactive "Feature coming soon" notice, even if backend checkout settings are configured. Run `npm run check` and `npm test` to verify the application.
 
 ## PayMongo integration
 
-The server has a PHP hosted-checkout integration. Donors choose one of the four projects, enter a one-time amount and contact details, and leave the site for PayMongo's checkout. The server creates a unique local donation reference and a PayMongo checkout session. A return to the site shows a pending status until a signed `checkout_session.payment.paid` webhook matches the reference, session, project, amount, currency, and payment. Duplicate events cannot add a second donation.
+The server has a PHP hosted-checkout integration prepared for a future launch. The public donation form is intentionally unavailable. When re-enabled after review, donors will choose one of the four projects, enter a one-time amount and contact details, and leave the site for PayMongo's checkout. The server creates a unique local donation reference and a PayMongo checkout session. A return to the site shows a pending status until a signed `checkout_session.payment.paid` webhook matches the reference, session, project, amount, currency, and payment. Duplicate events cannot add a second donation.
 
 Copy `.env.example` to `.env` and fill the settings. Keep `.env` and the SQLite database private; both are gitignored. The API secret key and webhook signing secret must never be used in browser code. Create a PayMongo webhook for `https://YOUR-DOMAIN/api/paymongo/webhook` and subscribe to `checkout_session.payment.paid`. Test with PayMongo test keys and a publicly reachable HTTPS test domain first. The hosted checkout charges PHP; eligible international cards may be accepted by PayMongo, but USD/SAR charging and recurring donations are not implemented.
 

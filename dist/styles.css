@@ -256,5 +256,12 @@ html[dir=rtl] .donation-card #project{background-position:left 14px center}
 .contact-email{display:inline-flex;align-items:center;gap:18px;max-width:100%;overflow-wrap:anywhere;margin-top:14px;padding:18px 22px;border:1px solid #d5c7a7;border-inline-start:3px solid var(--gold);border-radius:3px;background:var(--paper);color:var(--forest);font-family:Manrope,sans-serif;font-size:clamp(1rem,2vw,1.35rem);font-weight:800;box-shadow:0 12px 32px rgba(18,47,37,.06);transition:transform .2s,box-shadow .2s}
 .contact-email:hover{transform:translateY(-2px);box-shadow:0 17px 38px rgba(18,47,37,.12)}
 .contact-email span{color:#ab8850;font-weight:400}
+.coming-soon-card{min-height:330px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:20px}
+.coming-soon-mark{display:grid;place-items:center;width:62px;height:62px;border-radius:50%;border:1px solid #d7c18e;background:#f5efdf;color:var(--forest);font-size:1.65rem}
+.coming-soon-card h2{margin:0;color:var(--forest);font-size:clamp(2rem,4vw,3.4rem)}
+.coming-soon-card p{max-width:530px;margin:0;color:#5d6b61;line-height:1.85}
+.selected-project{width:100%;margin-top:10px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:7px}
+.selected-project span{color:#8b764a;text-transform:uppercase;letter-spacing:.13em;font-size:.68rem;font-weight:800}
+.selected-project strong{color:var(--forest);font-size:1.1rem}
 html[lang=ar] .contact-email{font-family:Manrope,sans-serif;direction:ltr}
 @media(max-width:520px){.contact-email{padding:14px 16px;font-size:.92rem;gap:8px}}
