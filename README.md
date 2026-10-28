@@ -1,6 +1,10 @@
 # Ibadullah website
 
-Responsive English/Arabic website for four giving areas: building masajid, supporting existing masajid, orphan support, and clean water. Project imagery is illustrative. No public deployment has been made.
+Responsive English/Arabic website for four giving areas: building masajid, supporting existing masajid, orphan support, and clean water. Project imagery is illustrative.
+
+## Cloudflare Worker
+
+The static site can be deployed as Worker assets from `dist` using `wrangler.jsonc`. Connect the `main` branch of this repository to the `ibadullah-website` Worker in Cloudflare Workers Builds, then use `npx wrangler deploy` as the deploy command. This serves the public pages only; the Node server, donation API, and local SQLite database do not run in Cloudflare Workers.
 
 ## Local preview
 
