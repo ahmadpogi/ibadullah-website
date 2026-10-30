@@ -1,6 +1,6 @@
 # Ibadullah website
 
-Responsive English/Arabic website for three planned focus areas: building masajid, supporting existing masajid, and orphan care. The About page describes other programs under consideration and displays the SEC certificate of incorporation. Project imagery is illustrative.
+Responsive English/Arabic website for four proposed focus areas: building masajid, supporting existing masajid, orphan care, and clean-water access. The clean-water page is informational and is not in the checkout allowlist. The About page describes other programs under consideration and displays the SEC certificate of incorporation. Project imagery is illustrative.
 
 ## Cloudflare Worker
 

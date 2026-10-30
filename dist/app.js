@@ -49,6 +49,23 @@ const projectData = [
       focus: ['الغذاء والتعليم والرعاية الصحية والملابس', 'دعم البيئات الأسرية المستقرة', 'التحقق من الاستحقاق والخصوصية وسلامة الأطفال'],
       fields: ['نطاق البرنامج', 'معايير الاستحقاق', 'إجراءات التوزيع', 'النتائج الإجمالية']
     }
+  },
+  {
+    id: 'clean-water', href: '/projects/clean-water.html', image: '/assets/clean-water.webp',
+    en: {
+      title: 'Clean Water for Families', eyebrow: 'A daily essential', short: 'Help families access safe and reliable drinking water.',
+      intro: 'This proposed focus area would explore safe drinking-water access for communities in need. Any well, filtration, or distribution project would need a documented needs assessment, budget, implementation partner, and maintenance plan before it could begin.',
+      action: 'Explore Clean Water',
+      focus: ['Safe drinking-water access', 'Appropriate wells, filtration, or distribution', 'Maintenance and measurable results'],
+      fields: ['Location', 'Intended beneficiaries', 'Budget', 'Implementation partner', 'Maintenance plan', 'Measurable results']
+    },
+    ar: {
+      title: 'المياه النظيفة للأسر', eyebrow: 'حاجة يومية أساسية', short: 'مساعدة الأسر في الحصول على مياه شرب آمنة وموثوقة.',
+      intro: 'يدرس هذا المجال المقترح سبل توفير مياه شرب آمنة للمجتمعات المحتاجة. وقبل بدء أي مشروع للآبار أو الترشيح أو التوزيع، يلزم توثيق الاحتياجات والميزانية والشريك المنفذ وخطة الصيانة.',
+      action: 'استكشف مشروع المياه النظيفة',
+      focus: ['الوصول إلى مياه شرب آمنة', 'آبار أو ترشيح أو توزيع مناسب', 'الصيانة وقياس النتائج'],
+      fields: ['الموقع', 'المستفيدون المستهدفون', 'الميزانية', 'الشريك المنفذ', 'خطة الصيانة', 'نتائج قابلة للقياس']
+    }
   }
 ];
 
@@ -57,8 +74,8 @@ const copy = {
     navProjects: 'Focus areas', navApproach: 'Our approach', navTransparency: 'Transparency', navAbout: 'About us', navDonate: 'Give with purpose',
     menu: 'Open menu', language: 'العربية',
     heroKicker: 'Faith in action. Care that lasts.', heroTitle: 'Build Masajid. Sustain Communities. Transform Lives.',
-    heroText: 'Rooted in the Qur’an and authentic Sunnah, Ibadullah plans to develop sustainable Muslim communities in the Philippines through masjid development, support for existing masajid, and care for orphans and vulnerable families.',
-    explore: 'Explore the three focus areas', howWeWork: 'How we work', purpose: 'One mission. Three focus areas.',
+    heroText: 'Rooted in the Qur’an and authentic Sunnah, Ibadullah plans to develop sustainable Muslim communities in the Philippines through masjid development, support for existing masajid, care for orphans and vulnerable families, and proposed clean-water access.',
+    explore: 'Explore the four focus areas', howWeWork: 'How we work', purpose: 'One mission. Four focus areas.',
     purposeText: 'Explore the programs being planned. Online donations and project-specific fundraising are not yet active.',
     learnMore: 'Explore project', planBadge: 'Our commitment', planTitle: 'A place to pray. A community to support.',
     planText: 'Building a masjid is only the beginning. A separate, coordinated sustainability plan helps participating masajid prepare for the costs and services that continue every month.',
@@ -69,11 +86,12 @@ const copy = {
     step1: 'Choose a program', step1Text: 'When giving opens, your selection will stay attached to its donation record.',
     step2: 'Review your donation', step2Text: 'The planned checkout will show the program, amount, and currency before payment.',
     step3: 'See the outcome', step3Text: 'Published updates and financial reports will follow verified activity.',
-    closingTitle: 'Build lasting benefit together.', closingText: 'Explore the three focus areas and how Ibadullah plans to turn its mission into accountable action.',
+    closingTitle: 'Build lasting benefit together.', closingText: 'Explore the four focus areas and how Ibadullah plans to turn its mission into accountable action.',
     footerMission: 'Supporting masajid, strengthening communities, caring for vulnerable families.', footerExplore: 'Explore', footerConnect: 'Information',
     footerSecTitle: 'SEC registration', footerSecNumber: 'Registration no.', footerSecCertificate: 'View certificate',
     allProjects: 'All focus areas', projectFocus: 'What this program may support', projectFacts: 'What each proposal should disclose', projectPending: 'Specific approved project details and budgets will appear here when available.',
     projectCtaTitle: 'Support this purpose', projectCtaText: 'Online donations for this program are coming soon. The payment page is currently unavailable.',
+    waterCtaTitle: 'A proposed focus area', waterCtaText: 'Clean-water projects are still under consideration. Contact us to learn more or discuss a partnership.', waterCtaAction: 'Contact us',
     sustainEyebrow: 'Masjid sustainability', sustainTitle: 'Building Masajid with Sustainable Community Support.',
     sustainLead: 'Construction and ongoing support are separate but coordinated responsibilities. A masjid should be equipped to serve its community long after opening day.',
     sustainBuild: 'Build responsibly', sustainBuildText: 'Plan approved construction, essential facilities, milestones, and a clear budget.',
@@ -84,7 +102,7 @@ const copy = {
     sustainTrainingTitle: 'Strengthen local administration', sustainTrainingText: 'Training for masjid administrators may cover governance, accounting, maintenance planning, fundraising, and community engagement.',
     transparencyEyebrow: 'Accountability by design', transparencyTitle: 'A clear path from donation to impact.',
     transparencyLead: 'The website will report actual activity only after the donation system and project records are operational. We will not publish estimated totals as if they were received funds.',
-    recordsTitle: 'Three distinct program categories', recordsText: 'The proposed system would record each donation against its selected program. Any change of designation would require a documented, authorized process.',
+    recordsTitle: 'Clear records for each program', recordsText: 'The proposed system would record each donation against its selected approved program. Any change of designation would require a documented, authorized process.',
     trackingTitle: 'Verified transaction records', trackingText: 'Records will include the project, amount, currency, status, provider reference, fees, receipt, and any refund or reversal.',
     reportingTitle2: 'Useful public reports', reportingText2: 'For each approved project: funds received, expenses, milestones, and remaining balance. Children’s identities stay private.',
     statusLabel: 'Current reporting status', statusTitle: 'Reports are being prepared', statusText: 'No public financial totals are shown in this preview because live fundraising and project reporting have not begun here.',
@@ -118,8 +136,8 @@ const copy = {
     navProjects: 'مجالات العمل', navApproach: 'نهجنا', navTransparency: 'الشفافية', navAbout: 'من نحن', navDonate: 'تبرع لهدف واضح',
     menu: 'افتح القائمة', language: 'English',
     heroKicker: 'إيمان يتحول إلى عمل وخير يدوم', heroTitle: 'نبني المساجد. ندعم المجتمعات. نغيّر الحياة.',
-    heroText: 'انطلاقاً من القرآن الكريم والسنة الصحيحة، تخطط عباد الله لتنمية مجتمعات إسلامية مستدامة في الفلبين عبر تطوير المساجد ودعم المساجد القائمة ورعاية الأيتام والأسر المحتاجة.',
-    explore: 'استكشف مجالات العمل الثلاثة', howWeWork: 'كيف نعمل', purpose: 'رسالة واحدة وثلاثة مجالات للعمل.',
+    heroText: 'انطلاقاً من القرآن الكريم والسنة الصحيحة، تخطط عباد الله لتنمية مجتمعات إسلامية مستدامة في الفلبين عبر تطوير المساجد ودعم المساجد القائمة ورعاية الأيتام والأسر المحتاجة، ودراسة سبل توفير المياه النظيفة.',
+    explore: 'استكشف مجالات العمل الأربعة', howWeWork: 'كيف نعمل', purpose: 'رسالة واحدة وأربعة مجالات للعمل.',
     purposeText: 'تعرّف على البرامج المخطط لها. التبرعات عبر الإنترنت وجمع التبرعات للمشاريع غير متاحين بعد.',
     learnMore: 'استكشف المشروع', planBadge: 'التزامنا', planTitle: 'مكان للصلاة ومجتمع يستحق الدعم.',
     planText: 'بناء المسجد هو البداية فقط. تساعد خطة استدامة منفصلة ومنسقة المساجد المشاركة على الاستعداد للتكاليف والخدمات المستمرة كل شهر.',
@@ -130,11 +148,12 @@ const copy = {
     step1: 'اختر برنامجاً', step1Text: 'عند بدء التبرعات سيبقى اختيارك مرتبطاً بسجل التبرع.',
     step2: 'راجع تبرعك', step2Text: 'سيعرض الدفع المخطط له البرنامج والمبلغ والعملة قبل إتمام العملية.',
     step3: 'تابع الأثر', step3Text: 'ستُعرض التحديثات والتقارير المالية بعد التحقق من النشاط الفعلي.',
-    closingTitle: 'معاً نصنع نفعاً يدوم.', closingText: 'استكشف مجالات العمل الثلاثة وتعرّف كيف تخطط عباد الله لتحويل رسالتها إلى عمل مسؤول.',
+    closingTitle: 'معاً نصنع نفعاً يدوم.', closingText: 'استكشف مجالات العمل الأربعة وتعرّف كيف تخطط عباد الله لتحويل رسالتها إلى عمل مسؤول.',
     footerMission: 'دعم المساجد وتقوية المجتمعات ورعاية الأسر المحتاجة.', footerExplore: 'استكشف', footerConnect: 'معلومات',
     footerSecTitle: 'التسجيل لدى SEC', footerSecNumber: 'رقم التسجيل', footerSecCertificate: 'عرض الشهادة',
     allProjects: 'جميع مجالات العمل', projectFocus: 'ما قد يدعمه هذا البرنامج', projectFacts: 'ما ينبغي الإفصاح عنه لكل مقترح', projectPending: 'ستظهر هنا تفاصيل المشاريع والميزانيات المعتمدة عند توفرها.',
     projectCtaTitle: 'ادعم هذا الهدف', projectCtaText: 'ستتاح التبرعات عبر الإنترنت لهذا البرنامج قريباً. صفحة الدفع غير متاحة حالياً.',
+    waterCtaTitle: 'مجال عمل مقترح', waterCtaText: 'لا تزال مشاريع المياه النظيفة قيد الدراسة. تواصل معنا لمعرفة المزيد أو مناقشة التعاون.', waterCtaAction: 'تواصل معنا',
     sustainEyebrow: 'استدامة المساجد', sustainTitle: 'بناء المساجد مع دعم مجتمعي مستدام.',
     sustainLead: 'البناء والدعم المستمر مسؤوليتان منفصلتان ومترابطتان. ينبغي تجهيز المسجد لخدمة مجتمعه بعد يوم الافتتاح بوقت طويل.',
     sustainBuild: 'بناء مسؤول', sustainBuildText: 'تخطيط البناء المعتمد والمرافق الأساسية والمراحل والميزانية الواضحة.',
@@ -145,7 +164,7 @@ const copy = {
     sustainTrainingTitle: 'تعزيز الإدارة المحلية', sustainTrainingText: 'قد يشمل تدريب إداريي المساجد الحوكمة والمحاسبة وتخطيط الصيانة وجمع التبرعات والمشاركة المجتمعية.',
     transparencyEyebrow: 'المساءلة من البداية', transparencyTitle: 'مسار واضح من التبرع إلى الأثر.',
     transparencyLead: 'سينشر الموقع النشاط الفعلي فقط بعد تشغيل نظام التبرعات وسجلات المشاريع. ولن تُعرض التقديرات وكأنها أموال مستلمة.',
-    recordsTitle: 'ثلاث فئات برامج مستقلة', recordsText: 'سيربط النظام المقترح كل تبرع بالبرنامج الذي اختاره المتبرع. ويتطلب تغيير التخصيص إجراءً موثقاً ومصرحاً به.',
+    recordsTitle: 'سجلات واضحة لكل برنامج', recordsText: 'سيربط النظام المقترح كل تبرع ببرنامجه المعتمد الذي اختاره المتبرع. ويتطلب تغيير التخصيص إجراءً موثقاً ومصرحاً به.',
     trackingTitle: 'سجلات معاملات موثقة', trackingText: 'تشمل السجلات المشروع والمبلغ والعملة والحالة ومرجع مزود الدفع والرسوم والإيصال وأي استرداد.',
     reportingTitle2: 'تقارير عامة مفيدة', reportingText2: 'لكل مشروع معتمد: الأموال المستلمة والمصروفات والمراحل والرصيد المتبقي، مع حماية هوية الأطفال.',
     statusLabel: 'حالة التقارير حالياً', statusTitle: 'التقارير قيد الإعداد', statusText: 'لا تعرض هذه النسخة أي إجماليات مالية عامة لأن جمع التبرعات والتقارير الفعلية لم يبدآ هنا بعد.',
@@ -226,7 +245,8 @@ function closing() {
 
 function projectPage(item) {
   const c = t(), d = item[lang];
-  return `<main><section class="project-hero"><div class="project-hero-image" style="background-image:url('${item.image}')"></div><div class="project-hero-shade"></div><div class="container project-hero-inner"><a class="back-link" href="/#projects">← ${c.allProjects}</a><span class="eyebrow eyebrow-gold">${d.eyebrow}</span><h1>${d.title}</h1><p>${d.short}</p></div></section><section class="section project-body"><div class="container project-layout"><div class="project-story"><span class="eyebrow">${d.eyebrow}</span><h2>${d.title}</h2><p class="large-paragraph">${d.intro}</p><h3>${c.projectFocus}</h3><ul class="check-list">${d.focus.map(x=>`<li>${x}</li>`).join('')}</ul></div><aside class="project-aside"><div class="aside-top"><span>${d.eyebrow}</span></div><h3>${c.projectFacts}</h3><ul>${d.fields.map(x=>`<li>${x}</li>`).join('')}</ul><p>${c.projectPending}</p></aside></div></section><section class="project-donate"><div class="container project-donate-inner"><div><span class="eyebrow eyebrow-gold">${c.projectCtaTitle}</span><h2>${d.title}</h2><p>${c.projectCtaText}</p></div><a class="button button-gold" href="/donate.html?project=${item.id}">${d.action} ${arrow}</a></div></section></main>`;
+  const water = item.id === 'clean-water';
+  return `<main><section class="project-hero"><div class="project-hero-image" style="background-image:url('${item.image}')"></div><div class="project-hero-shade"></div><div class="container project-hero-inner"><a class="back-link" href="/#projects">← ${c.allProjects}</a><span class="eyebrow eyebrow-gold">${d.eyebrow}</span><h1>${d.title}</h1><p>${d.short}</p></div></section><section class="section project-body"><div class="container project-layout"><div class="project-story"><span class="eyebrow">${d.eyebrow}</span><h2>${d.title}</h2><p class="large-paragraph">${d.intro}</p><h3>${c.projectFocus}</h3><ul class="check-list">${d.focus.map(x=>`<li>${x}</li>`).join('')}</ul></div><aside class="project-aside"><div class="aside-top"><span>${d.eyebrow}</span></div><h3>${c.projectFacts}</h3><ul>${d.fields.map(x=>`<li>${x}</li>`).join('')}</ul><p>${c.projectPending}</p></aside></div></section><section class="project-donate"><div class="container project-donate-inner"><div><span class="eyebrow eyebrow-gold">${water?c.waterCtaTitle:c.projectCtaTitle}</span><h2>${d.title}</h2><p>${water?c.waterCtaText:c.projectCtaText}</p></div><a class="button button-gold" href="${water?'/contact.html':`/donate.html?project=${item.id}`}">${water?c.waterCtaAction:d.action} ${arrow}</a></div></section></main>`;
 }
 
 function simpleHero(eyebrow, title, lead) {
